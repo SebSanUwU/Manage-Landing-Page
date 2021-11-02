@@ -124,6 +124,10 @@ a:hover {
   }
 }
 
+.attribution {
+  text-align: center;
+}
+
 .button {
   display: inline-block;
   position: relative;
@@ -283,8 +287,9 @@ a:hover {
 }
 
 .header__links a {
+  color: #242d52;
   font-size: 0.75rem;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .header__links a:not(:last-child) {
@@ -926,5 +931,108 @@ a:hover {
     height: 30px;
     width: 11px;
   }
+}
+
+.prefooter .container {
+  position: relative;
+  min-height: 25.375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f25f3a;
+}
+
+.prefooter .container::before {
+  content: '';
+  position: absolute;
+  background-image: url(https://markfalcutila.github.io/manage-landing-page-master/images/bg-tablet-pattern.svg);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+  background-size: 95%;
+  background-position: right 66vw top 10vh, left 1vw bottom -37vh;
+}
+
+@media (min-width: 64em) {
+  .prefooter .container::before {
+    background-image: url(https://markfalcutila.github.io/manage-landing-page-master/images/bg-tablet-pattern.svg), url(https://markfalcutila.github.io/manage-landing-page-master/images/bg-tablet-pattern.svg);
+    background-size: 35%;
+    background-position: right -6vw top -40vh, left 1vw bottom -25vh;
+  }
+}
+
+@media (min-width: 40em) {
+  .prefooter .container {
+    min-height: 19.125rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .prefooter .container {
+    margin-top: 7.75rem;
+    min-height: 13.6875rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.prefooter__title {
+  margin: 0 2rem;
+  padding-top: 6.5625rem;
+}
+
+@media (min-width: 64em) {
+  .prefooter__title {
+    margin: 0;
+    padding: 0;
+    max-width: 39rem;
+    padding-right: 5rem;
+  }
+}
+
+.prefooter__title h1 {
+  text-align: justify;
+  font-size: 2.0625rem;
+  color: #fafafa;
+  text-align: center;
+}
+
+@media (min-width: 64em) {
+  .prefooter__title h1 {
+    text-align: left;
+  }
+}
+
+.prefooter__button {
+  padding-top: 1.6875rem;
+}
+
+@media (min-width: 64em) {
+  .prefooter__button {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.prefooter__button a {
+  background-color: #fafafa;
+  color: #f25f3a;
 }
 /*# sourceMappingURL=style.css.map */

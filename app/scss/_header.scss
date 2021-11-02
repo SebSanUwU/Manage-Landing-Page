@@ -49,8 +49,9 @@
 
     &__links{
         a{
+            color: $darkBlue;
             font-size: 0.75rem;
-            font-weight:300;
+            font-weight:500;
         }
         a:not(:last-child){
             margin-right: 2rem;

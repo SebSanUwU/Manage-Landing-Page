@@ -1,0 +1,76 @@
+.prefooter {
+
+  .container {
+    position: relative;
+    min-height: 25.375rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: $brightRed;
+
+    &::before{
+        content: '';
+        position: absolute;
+        background-image: url(https://markfalcutila.github.io/manage-landing-page-master/images/bg-tablet-pattern.svg);
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        opacity: 0.25;
+        background-size: 95%;
+        background-position: right 66vw top 10vh, left 1vw bottom -37vh;
+        @include breakpoint-up(large){
+            background-image: url(https://markfalcutila.github.io/manage-landing-page-master/images/bg-tablet-pattern.svg),url(https://markfalcutila.github.io/manage-landing-page-master/images/bg-tablet-pattern.svg);
+            background-size: 35%;
+            background-position: right -6vw top -40vh, left 1vw bottom -25vh;
+        }
+    }
+    
+    
+    @include breakpoint-up(medium) {
+      min-height: 19.125rem;
+    }
+
+    @include breakpoint-up(large) {
+      margin-top: 7.75rem;
+      min-height: 13.6875rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  
+
+  &__title {
+    margin: 0 2rem;
+    padding-top: 6.5625rem;
+    @include breakpoint-up(large) {
+      margin: 0;
+      padding: 0;
+      max-width: 39rem;
+      padding-right: 5rem;
+    }
+    h1 {
+      text-align: justify;
+      font-size: 2.0625rem;
+      color: $veryLightGray;
+      text-align: center;
+      @include breakpoint-up(large) {
+        text-align: left;
+      }
+    }
+  }
+
+  &__button {
+    padding-top: 1.6875rem;
+    @include breakpoint-up(large) {
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      background-color: $veryLightGray;
+      color: $brightRed;
+    }
+  }
+}
