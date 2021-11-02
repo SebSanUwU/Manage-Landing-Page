@@ -595,8 +595,22 @@ a:hover {
   text-align: center;
 }
 
+.carousel .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .blog-slider {
-  width: 93%;
+  width: 95%;
   position: relative;
   max-width: 800px;
   margin: auto;
@@ -605,30 +619,25 @@ a:hover {
           box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
   padding: 40px 25px;
   border-radius: 25px;
-  height: 800px;
+  height: 250px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  min-height: 200px;
+  margin: 0 auto;
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
 }
 
-@media screen and (max-width: 992px) {
+@media (min-width: 40em) {
   .blog-slider {
-    max-width: 680px;
-    height: 400px;
+    height: 200px;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (min-width: 64em) {
   .blog-slider {
-    min-height: 200px;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 6.5rem;
-  }
-}
-
-@media screen and (max-height: 500px) and (min-width: 992px) {
-  .blog-slider {
-    height: 150px;
+    padding: 25px;
+    height: 200px;
   }
 }
 
@@ -639,14 +648,18 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-@media screen and (max-width: 768px) {
+@media (min-width: 64em) {
   .blog-slider__item {
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
@@ -741,11 +754,23 @@ a:hover {
   width: 500px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  height: 300px;
-  border-radius: 20px;
+  border-radius: 50%;
   -webkit-transform: translateX(-80px);
           transform: translateX(-80px);
   overflow: hidden;
+  -webkit-transform: translateY(-110%);
+          transform: translateY(-110%);
+  width: 73px;
+  height: 73px;
+}
+
+@media (min-width: 64em) {
+  .blog-slider__img {
+    width: 200px;
+    height: 200px;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
 }
 
 .blog-slider__img:after {
@@ -771,42 +796,16 @@ a:hover {
   transition: all 0.3s;
 }
 
-@media screen and (max-width: 768px) {
-  .blog-slider__img {
-    -webkit-transform: translateY(-110%);
-            transform: translateY(-110%);
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .blog-slider__img {
-    width: 73px;
-    height: 73px;
-  }
-}
-
-@media screen and (max-height: 500px) and (min-width: 992px) {
-  .blog-slider__img {
-    height: 270px;
-  }
-}
-
 .blog-slider__content {
-  padding-right: 25px;
+  margin-top: -80px;
+  text-align: center;
+  padding: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media (min-width: 64em) {
   .blog-slider__content {
-    margin-top: -80px;
-    text-align: center;
-    padding: 0 30px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .blog-slider__content {
-    padding: 0;
+    width: 60%;
+    padding: 0px 30px;
   }
 }
 
@@ -822,12 +821,24 @@ a:hover {
   font-size: 1rem;
   font-weight: 700;
   color: #242d52;
-  margin-bottom: 1.875rem;
+  margin-bottom: 0.875rem;
   margin-top: 1rem;
+}
+
+@media (min-width: 64em) {
+  .blog-slider__title {
+    margin-top: 6rem;
+  }
 }
 
 .blog-slider__text {
   margin-bottom: 30px;
+}
+
+@media (min-width: 64em) {
+  .blog-slider__text p {
+    text-align: center;
+  }
 }
 
 .blog-slider .swiper-container-horizontal > .swiper-pagination-bullets,
@@ -841,42 +852,52 @@ a:hover {
 .blog-slider__pagination {
   position: absolute;
   z-index: 21;
-  right: 20px;
-  width: 11px !important;
+  right: 0px;
   text-align: center;
-  left: auto !important;
-  top: 50%;
   bottom: auto !important;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50% !important;
+  top: 205px;
+  width: 100% !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@media screen and (max-width: 768px) {
+@media (min-width: 40em) {
   .blog-slider__pagination {
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    left: 50% !important;
-    top: 205px;
-    width: 100% !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    top: 160px;
+  }
+}
+
+@media (min-width: 64em) {
+  .blog-slider__pagination {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    top: 25%;
+    left: auto !important;
+    right: -770px;
   }
 }
 
 .blog-slider__pagination.swiper-pagination-bullets .swiper-pagination-bullet {
-  margin: 8px 0;
+  margin: 0 5px;
 }
 
-@media screen and (max-width: 768px) {
+@media (min-width: 64em) {
   .blog-slider__pagination.swiper-pagination-bullets .swiper-pagination-bullet {
-    margin: 0 5px;
+    margin: 4px 0;
   }
 }
 
@@ -893,16 +914,17 @@ a:hover {
 
 .blog-slider__pagination .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #fd3838;
-  height: 30px;
+  background: #f25f3a;
+  height: 10px;
+  width: 40px;
   -webkit-box-shadow: 0px 0px 20px rgba(252, 56, 56, 0.3);
           box-shadow: 0px 0px 20px rgba(252, 56, 56, 0.3);
 }
 
-@media screen and (max-width: 768px) {
+@media (min-width: 64em) {
   .blog-slider__pagination .swiper-pagination-bullet-active {
-    height: 11px;
-    width: 30px;
+    height: 30px;
+    width: 11px;
   }
 }
 /*# sourceMappingURL=style.css.map */
