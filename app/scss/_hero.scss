@@ -1,0 +1,82 @@
+.hero {
+
+  &__grid {
+    @include breakpoint-up(large) {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__image {
+    position: relative;
+    background-image: url("../images/illustration-intro.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 19.6875rem;
+    margin: 0 auto;
+    margin-bottom: 1.875rem;
+
+    @include breakpoint-up(large) {
+      margin: 0;
+      flex: 1;
+      background-image: none;
+      height: 41rem;
+      
+    }
+
+    @include breakpoint-up(large){
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url("../images/illustration-intro.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center 8%;
+        left: 3%;
+        min-width: 34.8125rem;
+        min-height: 61.5rem;
+      }
+    }
+    
+  }
+  &__text {
+    display: block;
+    text-align: center;
+    width: fit-content;
+    @include breakpoint-up(large) {
+      text-align: left;
+      flex: 1;
+      margin: 7.1875rem 0;
+      
+    }
+    h1 {
+      margin-bottom: 0.6875rem;
+      @include breakpoint-up(large) {
+        margin: 0;
+        margin-right: 7.375rem;
+      }
+    }
+    p {
+      padding: 0 1.3125rem;
+      margin-bottom: 1.875rem;
+      @include breakpoint-up(large) {
+        padding: 0;
+        margin: 02.25rem 0;
+        margin-right: 17.8125rem;
+      }
+    }
+    h1,p{
+      @include breakpoint-down(large){
+        margin-right: 0;
+      }
+    }
+    a {
+      margin: 0 auto;
+      @include breakpoint-up(large){
+          margin: 0;
+      }
+    }
+  }
+}

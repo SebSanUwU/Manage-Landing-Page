@@ -1,0 +1,104 @@
+.header{
+    
+    .overlay{
+        z-index: 1;
+        display: block;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height:100%;
+        background-image: linear-gradient($veryLightGray,$darkGrayishBlue);
+    }
+
+    &.open{
+        .header__toggle{
+            > span:first-child {
+                transform: rotate(45deg);
+              }
+              > span:nth-child(2) {
+                opacity: 0;
+              }
+              > span:last-child {
+                transform: rotate(-45deg);
+              }
+        }
+    }
+
+    &__nav{
+        z-index: 2;
+        position: relative;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+    &__logo{
+        align-self: flex-end;
+        img{
+            width: 6.9375rem;
+            
+            @include breakpoint-up(medium){
+                width: 9.4375rem;
+            }
+        }
+    }
+
+    &__links{
+        a{
+            font-size: 0.75rem;
+            font-weight:300;
+        }
+        a:not(:last-child){
+            margin-right: 2rem;
+        }
+
+    }
+
+    
+
+    &__toggle{
+        cursor: pointer;
+        >span{
+            display: block;
+            width:1.5625rem;
+            height: 0.25rem;
+            background-color: $darkBlue;
+            transition: all 300ms ease-in-out ;
+            transform-origin: 3px 2px;
+            &:not(:last-child){
+                margin-bottom:0.1875rem ;
+            }
+        }
+    }
+
+    &__menu{
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        
+        left: 0;
+        
+        display: flex;
+        flex-direction: column;
+        width: calc(100%-3.125rem);
+        left: 50%;
+        transform: translateX(-50%);
+        
+        background-color:$veryLightGray ;
+        text-align: center;
+        margin-top: 6.5rem;
+        padding: 2.6225rem 7.5rem;
+        border-radius: 5px;
+        a{
+            font-weight: $fontw-big;
+            &:not(:last-child){
+                margin-bottom: 2.125rem;
+                
+            }
+        }
+    }
+}
