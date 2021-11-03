@@ -26,6 +26,9 @@
   }
 
   &__logo {
+    a{
+      display: inline-block;
+    }
     margin-top: 3.25rem;
     grid-area: logo;
     @include breakpoint-up(large) {
@@ -35,12 +38,16 @@
   &__social {
     grid-area: social;
     margin-top: 3.25rem;
+
     @include breakpoint-up(large) {
       margin: 0;
       align-self: flex-end;
     }
+
     a {
-      img {
+      display: inline-block;
+
+      .logo{
         width: 2.0625rem;
         height: 2.0625rem;
         @include breakpoint-up(large) {
@@ -48,11 +55,31 @@
           height: 1.3125rem;
         }
       }
-    }
-    a:not(:last-child) {
-      margin-right: 2.065rem;
-      @include breakpoint-up(large) {
-        margin-right: 00.8125rem;
+
+
+      svg {
+        width: 2.0625rem;
+        height: 2.0625rem;
+        @include breakpoint-up(large) {
+          width: 1.3125rem;
+          height: 1.3125rem;
+        }
+      }
+      
+      
+      &:hover img path {
+        fill: $brightRed;
+      }
+
+      &:hover svg path {
+        fill: $brightRed;
+      }
+
+      &:not(:last-child) {
+        margin-right: 2.065rem;
+        @include breakpoint-up(large) {
+          margin-right: 00.8125rem;
+        }
       }
     }
   }
@@ -73,7 +100,16 @@
 
     a:not(:last-child) {
       margin-bottom: 1.25rem;
-      
+    }
+
+    a {
+      &:hover {
+        color: $brightRed;
+        transition: color 300ms ease-in-out;
+        &::before {
+          opacity: 1;
+        }
+      }
     }
   }
   &__column1,
@@ -99,9 +135,14 @@
         display: inline-block;
       }
     }
-    .button2{
-      border: 0;
-      
+    a{
+      input{
+        border: 0;
+        background-color: $brightRed;
+        font-size: 0.875rem;
+        font-weight: $fontw-big;
+        color: $veryLightGray;
+      }
     }
   }
   &__cr {

@@ -53,10 +53,20 @@
             color: $darkBlue;
             font-size: 0.75rem;
             font-weight:500;
+
+            &:hover{
+                color: $darkGrayishBlue;
+                transition: color 300ms ease-in-out;
+                &::before{
+                    opacity: 1;
+                }
+            }
         }
         a:not(:last-child){
             margin-right: 2rem;
         }
+
+        
 
     }
 

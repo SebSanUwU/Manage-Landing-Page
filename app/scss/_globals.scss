@@ -114,6 +114,8 @@ a:hover {
   font-weight: $fontw-big;
   color: $veryLightGray;
   border-radius: 3.125rem;
+
+  
 }
 
 .button2 {
@@ -126,6 +128,26 @@ a:hover {
   font-size: 0.875rem;
   font-weight: $fontw-big;
   border-radius: 3.125rem;
+  
+}
+
+.button,.button2{
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: hsl(13, 100%, 96%);
+    border-radius: 3.125rem;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+  }
+
+  &:hover::before{
+    opacity: 0.25;
+  }
 }
 
 .back_img {
