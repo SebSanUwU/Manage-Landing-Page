@@ -1252,7 +1252,7 @@ a:hover {
   }
 }
 
-.footer__email a input {
+.footer__email div input {
   border: 0;
   background-color: #f25f3a;
   font-size: 0.875rem;
